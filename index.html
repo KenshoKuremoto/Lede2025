@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Algorithm Election Comes to Japan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    .header.with-image-bg {
+  background-image: url('thumbnail.png');
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+  text-align: center;
+}
+
+.header.with-image-bg::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.45); /* ダークなオーバーレイ */
+  z-index: 1;
+}
+
+.header-text-container {
+  z-index: 2;
+  padding: 1em;
+  max-width: 90%;
+}
+
+.header-title {
+  font-size: 2.8em;
+  font-family: 'Lora', Georgia, serif;
+  margin: 0 0 0.3em 0;
+}
+
+.header-subtitle {
+  font-size: 1.2em;
+  font-weight: 300;
+  color: #eee;
+}
+
+    body {
+      margin: 0;
+      font-size: 20px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      text-rendering: optimizeLegibility;
+      background-color: #fff;
+      color: #111;
+    }
+    .content {
+      max-width: 768px;
+      margin: auto;
+      padding: 2em 1em;
+    }
+    h1 {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 2.6em;
+      margin-bottom: 0.2em;
+    }
+    h2 {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1.8em;
+      margin-top: 3em;
+      margin-bottom: 0.5em;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.2em;
+    }
+    h3 {
+      font-size: 1.3em;
+      font-weight: normal;
+      color: #444;
+      margin-top: 0;
+    }
+    p {
+      line-height: 1.8;
+      padding-bottom: 1.2em;
+    }
+    iframe {
+      width: 100%;
+      border: none;
+      display: block;
+      margin: 1.5em 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2em 0;
+      font-size: 0.95em;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.6em;
+      text-align: left;
+    }
+    thead th {
+      background-color: #f0f0f0;
+      font-weight: bold;
+      border-bottom: 2px solid #999;
+    }
+    .color-box {
+      border: 2px solid #333;
+      padding: 1em;
+      background-color: #f9f9f9;
+      margin-top: 0;
+    }
+    .highlight-box {
+      background: #f3faff;
+      border-left: 6px solid #4a90e2;
+      padding: 1em;
+      margin: 2em 0;
+      font-size: 0.95em;
+    }
+    .caption {
+      font-size: 0.85em;
+      color: #666;
+      margin-top: -1em;
+      margin-bottom: 1.5em;
+      text-align: center;
+    }
+    .radio-container {
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      padding: 1em;
+      margin: 2em 0;
+      border-radius: 6px;
+    }
+    .radio-container label {
+      margin-right: 1em;
+      font-weight: bold;
+      padding: 0.3em 0.6em;
+      border-radius: 4px;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+    .radio-container input[type="radio"]:checked + label {
+      background-color: #e6f2ff;
+      border-color: #4a90e2;
+    }
+    img, video {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 1em 0;
+      object-fit: contain;
+    }
+    @media (max-width: 768px) {
+      body {
+        font-size: 18px;
+      }
+      h1 {
+        font-size: 2em;
+      }
+      h2 {
+        font-size: 1.5em;
+      }
+    }
+    .image-toggle-buttons {
+  display: flex;
+  gap: 1em;
+  margin: 1.5em 0;
+}
+.toggle-button {
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  border: 2px solid #ccc;
+  background: #f9f9f9;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s, border-color 0.2s;
+}
+.toggle-button:hover {
+  background: #eee;
+}
+.toggle-button.active {
+  background: #4a90e2;
+  color: white;
+  border-color: #4a90e2;
+}
+.image-toggle-buttons-2 {
+  display: flex;
+  gap: 1em;
+  margin: 1.5em 0;
+}
+.toggle-button-2 {
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  border: 2px solid #ccc;
+  background: #f9f9f9;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s, border-color 0.2s;
+}
+.toggle-button-2:hover {
+  background: #eee;
+}
+.toggle-button-2.active {
+  background: #4a90e2;
+  color: white;
+  border-color: #4a90e2;
+}
+.color-box h2 {
+  margin-top: 0;
+}
+.color-box p {
+  margin-bottom: 1.2em;
+}
+
+.color-box li {
+  margin-bottom: 1em;
+  line-height: 1.6;
+}
+
+  </style>
+</head>
+<body>
+  <div class="header with-image-bg">
+  <div class="header-text-container">
+    <h1 class="header-title">
+  The Algorithm Election Comes to Japan:<br>
+  <span style="font-weight: normal;">From Policy to Provocation</span>
+</h1>
+    <p class="header-subtitle">A data-driven look at how two breakout parties—DPP and Sanseito—rose together in the polls, but only one dominated YouTube by turning outrage into attention
+</p>
+  </div>
+</div>
+
+  <div class="content">
+   <p><strong>By Kensho Kuremoto (Lede 2025)</strong></p>
+
+   <div style="text-align: center; margin: 2em 0;">
+  <a href="#visual-gap" style="
+    display: inline-block;
+    padding: 0.7em 1.5em;
+    font-size: 1em;
+    background-color: #00527A;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.3s;
+  " onmouseover="this.style.backgroundColor='#003f5c'" onmouseout="this.style.backgroundColor='#00527A'">
+    Read the Analysis Now
+  </a>
+</div>
+
+    <p><strong>Japan’s politics are in disarray. </strong>On July 20, in a stunning rebuke of the ruling coalition, voters stripped the government of its upper house majority. In the charts that follow, the ruling parties are marked in red and pink.</p>
+
+    <iframe title="Seat Comparison: Before and After the Election" aria-label="Stacked Columns" id="datawrapper-chart-ZE0Bv" src="https://datawrapper.dwcdn.net/ZE0Bv/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="472" data-external="1"></iframe>
+
+    <p>This comes after Prime Minister Shigeru Ishiba’s coalition lost control of the lower house last year—meaning, for the first time since the founding of the Liberal Democratic Party (LDP) in 1955, Japan’s dominant party no longer controls either chamber of the Diet. But this isn’t a clean transfer of power. Japan’s multiparty system is fractious. Coalition-building is rare. Every faction is a minority. Hence the chaos.</p>
+        <h2>Two Newcomers, One Digital Surge</h2>
+    <p>Amid the political disarray, two upstart parties have made striking gains: <strong>the Democratic Party for the People (<span style="color: #0010a5;">DPP</span>) and <span style="color: #eb640a;">Sanseito</span></strong>. The DPP grew from 9 to 22 seats; Sanseito surged from 2 to 15. Given that only half of the upper house seats were up for election, the scale of these gains is notable. In recent party support polls, both the DPP and Sanseito stand out—<strong>especially remarkable for parties founded less than five years ago.</strong></p>
+
+    <iframe title="Party Support Over the Past Year (Public Opinion Polls)" aria-label="Interactive line chart" id="datawrapper-chart-V5Jaa" src="https://datawrapper.dwcdn.net/V5Jaa/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="414" data-external="1"></iframe>
+
+    <p>A key force behind both parties' rise: social media. Platforms like X, TikTok, and especially YouTube helped connect them to a younger generation. The chart below shows vote choice by age. Younger voters lean toward the DPP or Sanseito. Support for the ruling coalition rises with age.</p>
+
+    <iframe title="Voter Preferences by Age Group" aria-label="Stacked Columns" id="datawrapper-chart-M7Sr6" src="https://datawrapper.dwcdn.net/M7Sr6/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="509" data-external="1"></iframe>
+
+    <h2>Not All Populists Are the Same</h2>
+    <p>Though often grouped together as social-media-driven populist upstarts, DPP and Sanseito chart fundamentally different paths.</p>
+   <figure style="margin: 1.5em 0;">
+  <img src="Leaders.png" alt="Leaders" width="100%">
+  <figcaption style="font-size: 0.85em; color: #666; text-align: center; margin-top: 0.5em;">
+    Both stand out as young leaders in a political system often dominated by older figures.
+  </figcaption>
+</figure>
+<p>
+  DPP, led by Yuichiro Tamaki (56), is a centrist party founded about five years ago under the slogan “Resolution rather than confrontation.” Tamaki, a prominent opposition figure in Japanese politics, has long used social media as a direct channel to voters, making the DPP one of the most visible political forces both online and offline.</p>
+<p>
+ Sanseito, by contrast, was built from the internet up. Led by Sohei Kamiya (47), a right-wing politician and former member of the ruling LDP, the party was founded by rallying supporters online and quickly gained traction through social media. In this election, it ran under the slogan “Japanese First,” promoting hardline stances on immigration, opposition to vaccines and globalization, and support for traditional gender roles—positions that have drawn <strong>comparisons to MAGA Republicans in the U.S., Germany’s AfD, and the UK’s Reform Party.</strong>
+</p>
+
+    <h2 id="visual-gap">Same Number of Videos—Three Times the Views</h2>
+    <p>To better understand the divergence between these two rising forces, I analyzed <strong>over 2,000 YouTube videos</strong> posted during the official campaign period(see methodology). Videos under 60 seconds were categorized as Shorts. <strong>In terms of volume, the two parties looked nearly identical</strong>: 1,061 videos for the DPP and 1,289 for Sanseito, with about 30 percent of each being Shorts and a similar number of unique channels posting about them.</p>
+    <iframe title="The number of Related Videos: DPP vs Sanseito" aria-label="Stacked Bars" id="datawrapper-chart-l5Tts" src="https://datawrapper.dwcdn.net/l5Tts/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="212" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}})}();
+</script>
+
+    <p>But in terms of reach, the difference was dramatic. <strong style="color:#00527A; background-color: #e6e6e6;">Sanseito-related videos amassed more than three times the total views of DPP-related videos.</strong>
+ </p>
+    <iframe title="Total Views: DPP vs. Sanseito" aria-label="Stacked Bars" id="datawrapper-chart-myaVM" src="https://datawrapper.dwcdn.net/myaVM/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="212" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}})}();
+</script>
+    <p>And while Shorts made up a similar proportion of video count for both parties, they accounted for nearly half (47.42%) of Sanseito’s total views—compared to just 39.22% for the DPP. In other words, Shorts weren’t just part of Sanseito’s strategy—they were its viral engine.</p>
+
+    <h2>A Visual Gap: How Sanseito Outshined DPP on the Chart</h2>
+    <p>To better understand what kinds of accounts were posting these videos, I manually categorized each channel by genre:</p>
+        <table>
+      <thead>
+        <tr><th>Genre</th><th>Color</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>User-Generated</td><td style="background-color: #f1c40f;"></td><td>Anonymous or ordinary users</td></tr>
+        <tr><td>Media</td><td style="background-color: #9467bd;"></td><td>Mainstream media outlets (TV, newspapers, etc.)</td></tr>
+        <tr><td>Official</td><td style="background-color: #d62728;"></td><td>Official party or candidate channels</td></tr>
+        <tr><td>Public Figure</td><td style="background-color: #17becf;"></td><td>Well-known personalities, influencers</td></tr>
+        <tr><td>Candidate</td><td style="background-color: #1f77b4;"></td><td>Channels by official party candidates</td></tr>
+      </tbody>
+    </table>
+
+    <p>To explore how different types of content contributed to each party’s reach, I visualized every video as a bubble: the size reflects total views, the color represents the genre of the channel, and a black stroke indicates Shorts videos. These bubbles were plotted across a timeline, allowing for a side-by-side comparison of the two parties’ YouTube presence.</p>
+    <div class="image-toggle-buttons">
+  <button class="toggle-button active" data-image="DPP_full.png">DPP</button>
+  <button class="toggle-button" data-image="Sanseito.png">Sanseito</button>
+</div>
+<div>
+  <img id="partyImage1" src="DPP_full.png" alt="Party Image" width="100%">
+</div>
+
+    <p>When toggling between the parties, a clear pattern emerges. Though the total number of videos was roughly the same, Sanseito’s overall view count far exceeded that of the DPP. The color pattern also tells a story: Sanseito’s chart is dominated by yellow bubbles, indicating a much higher share of user-generated content.
+    In fact, user-generated videos accounted for 83.4 percent of Sanseito’s total video views—compared to 63.6 percent for the DPP. <strong>In the algorithm-driven world of YouTube, it appears that decentralized, bottom-up content played a decisive role in amplifying Sanseito’s message.</strong></p>
+
+    <h2>Visualizing the Language That Drove the Divide</h2>
+    <p>So why did Sanseito’s videos spread more widely? To answer that, I analyzed the language of the video titles. I extracted the 100 most common words from each party’s video titles and manually categorized them by theme before mapping their co-occurrence networks (see methodology below).</p>
+
+    <table>
+      <thead>
+        <tr><th>Category</th><th>Color</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Media-Related</td><td style="background-color: #e41a1c;"></td><td>Mentions of media (often critical)</td></tr>
+        <tr><td>Foreign-Related</td><td style="background-color: #377eb8;"></td><td>References to immigration or foreign policy</td></tr>
+        <tr><td>Policy</td><td style="background-color: #9ecae1;"></td><td>Policy-related matters, including economic and childcare policies</td></tr>
+        <tr><td>Candidate</td><td style="background-color: #fbb4ae;"></td><td>References to party candidates</td></tr>
+        <tr><td>Anti-Government</td><td style="background-color: #fb9a99;"></td><td>Criticism of the ruling coalition</td></tr>
+        <tr><td>Other Parties</td><td style="background-color: #4daf4a;"></td><td>Mentions of rival opposition parties</td></tr>
+        <tr><td>YouTube Terms</td><td style="background-color: #d9d9d9;"></td><td>Platform-specific terms (e.g. “live,” “clip”)</td></tr>
+        <tr><td>Leader</td><td style="background-color: #b2df8a;"></td><td>Party leaders’ names</td></tr>
+        <tr><td>Speech</td><td style="background-color: #cab2d6;"></td><td>Campaign speech or locations</td></tr>
+        <tr><td>Other</td><td style="background-color: #f0f0f0;"></td><td>Miscellaneous terms</td></tr>
+      </tbody>
+    </table>
+
+    <p>Each bubble in the chart represents a word, sized by how frequently it appeared and positioned based on its contextual proximity to others. The words are also color-coded by theme, as shown in the table above.</p>
+
+ <div class="image-toggle-buttons-2">
+  <button class="toggle-button-2 active" data-image="dpp_network.png">DPP</button>
+  <button class="toggle-button-2" data-image="sanseito_network.png">Sanseito</button>
+</div>
+<div>
+  <img id="partyImage2" src="dpp_network.png" alt="Party Network" width="100%">
+</div>
+
+    <p>Switching between the two networks reveals clear differences. The DPP’s most prominent clusters revolve around economic policy and candidate names, pointing to a campaign grounded in proposals and profiles. Sanseito’s map, in contrast, is dense with terms tied to immigration, media, and rival parties—many of them critical. It also features a higher frequency of emotionally charged language, which appeared two to three times more often than in DPP-related titles.
+     <strong>In visual terms, the DPP’s network reflects a campaign of persuasion; Sanseito’s, one of provocation.</strong></p>
+
+    <p>The phenomenon reflects a broader trend in Japan’s YouTube ecosystem. With few restrictions on the monetization of political content—especially compared to the tightening policies seen on some Western platforms—Japan has seen a sharp rise in so-called “political YouTubers.” </p>
+         <figure style="margin: 1.5em 0;">
+  <img src="Youtuber.jpeg" alt="Political Youtuber" width="100%">
+  <figcaption style="font-size: 0.85em; color: #666; text-align: center; margin-top: 0.5em;">
+    Political YouTuber speaking in an interview (source: Nippon TV)
+  </figcaption>
+    <p>These creators often splice and repost political clips in pursuit of views and ad revenue. One such YouTuber, interviewed by Nippon TV, said they began by posting videos about the DPP but quickly pivoted to Sanseito content after witnessing a dramatic spike in engagement. In an interview, he said:</p>
+
+    <p><em>“It just blew up. I’ve never seen engagements like that. The energy was on a whole other level.”</em></p>
+
+
+        <h2>What This Tells Us—And What It Doesn’t</h2>
+        <p> This analysis offers only a partial view. Platforms like X and TikTok may reveal entirely different patterns of engagement, and many relevant YouTube videos may have gone undetected. Still, what emerges here is clear: Japan’s rising populist parties are not cut from the same cloth. </p>
+        <p> The populists who once gained support through policy are now being outpaced on YouTube by a new wave of populists riding on provocation. A style that thrives on creating enemies, rejecting established powers and mainstream media, and stirring anger and division has rapidly gained traction on social media—and is now beginning to shape political outcomes. We’ll continue to follow how this fragmented, algorithm-driven landscape continues to reshape Japanese politics.</p>
+
+    <div class="color-box">
+      <h2>Methodology</h2>
+      <p>
+  This project is built on three core components: YouTube data collection, quantitative analysis, and content analysis. All source data and code notebooks are available on <a href="https://github.com/KenshoKuremoto/Lede2025" target="_blank" rel="noopener">GitHub</a>.
+</p>
+
+      <ol>
+        <li><strong>Data Collection</strong><br>
+        We used the YouTube API to retrieve videos with party or leader names in the title or description. We recorded video ID, title, description, upload date, view count, and duration. To expand the dataset, we also scraped content from seven major news outlets and 19 political YouTube channels, integrating the data via video ID.
+        </li>
+
+        <li><strong>Quantitative Analysis</strong><br>
+        Using pandas, we analyzed total and average views per video, and flagged videos under 60 seconds as Shorts. We categorized each uploader manually and merged this genre info back into the master dataset. We then visualized video genre and performance using Observable, based on a notebook by <a href="https://observablehq.com/@tsurezure-lab-ws" target="_blank" rel="noopener">tsurezure lab</a>.
+        </li>
+
+        <li><strong>Title Analysis</strong><br>
+        We used the Japanese tokenizer Janome to extract nouns, verbs, and adjectives from titles, removing stopwords and irrelevant terms. We then mapped word co-occurrence networks to explore which terms appeared together and how often.
+        </li>
+      </ol>
+    </div>
+
+  </div> <!-- close .content -->
+  
+ <script>
+  const buttons = document.querySelectorAll(".toggle-button");
+  const img = document.getElementById("partyImage1");
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      buttons.forEach(b => b.classList.remove("active"));
+      button.classList.add("active");
+      img.src = button.getAttribute("data-image");
+    });
+  });
+</script>
+
+
+<script>
+  const buttons2 = document.querySelectorAll(".toggle-button-2");
+  const img2 = document.getElementById("partyImage2");
+
+  buttons2.forEach(button => {
+    button.addEventListener("click", () => {
+      buttons2.forEach(b => b.classList.remove("active"));
+      button.classList.add("active");
+      img2.src = button.getAttribute("data-image");
+    });
+  });
+</script>
+
+</body>
+</html>
+
