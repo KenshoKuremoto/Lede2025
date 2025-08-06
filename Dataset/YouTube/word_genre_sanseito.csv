@@ -1,0 +1,104 @@
+﻿word,frequency,genre
+神谷,953,Leader
+代表,646,Leader
+演説,263,Speech
+街頭,169,Speech
+日本,165,Policy
+政治,148,Speech
+議員,137,Candidate
+日本人,132,Foreign-Related
+shorts,120,YouTube Term
+発言,119,Foreign-Related
+ファースト,114,Foreign-Related
+自民党,103,Anti-Government
+候補,89,Candidate
+in,86,Speech
+令和,86,Others
+梅村,84,Candidate
+みずほ,79,Candidate
+報道,73,Media-Related
+再生,71,Other parties
+石破,71,Anti-Government
+さや,67,Candidate
+女性,64,Candidate
+　#,60,YouTube Term
+TBS,59,Media-Related
+高齢,59,Speech
+保守党,55,Other parties
+大阪,55,Speech
+比例,51,Candidate
+全国,49,Candidate
+議席,47,Candidate
+言う,45,Policy
+支持,45,Others
+投票,45,Speech
+産める,44,Speech
+切り抜き,44,YouTube Term
+理由,41,Policy
+党首,41,Policy
+討論,41,Policy
+問題,39,Foreign-Related
+すぎる,38,Others
+外国,37,Foreign-Related
+立憲,36,Other parties
+吉川,36,Candidate
+衝撃,35,Media-Related
+ニュース,35,Media-Related
+れい,35,Candidate
+政党,34,Policy
+メディア,34,Media-Related
+特集,34,Media-Related
+自民,34,Anti-Government
+炎上,33,Media-Related
+語る,32,Speech
+東京,32,Speech
+高島屋,32,Speech
+政策,31,Policy
+19,31,Others
+新選,31,Other parties
+妨害,30,Foreign-Related
+子ども,30,Policy
+解説,29,Policy
+維新,29,Other parties
+抗議,29,Media-Related
+広場,29,Speech
+難波,29,Speech
+税金,28,Policy
+偏向,28,Media-Related
+10,27,Others
+アンチ,27,Media-Related
+てる,27,Others
+17,27,Others
+減税,27,Policy
+ゆき,26,Others
+宮城,26,Speech
+18,26,Others
+ヤバ,26,Foreign-Related
+貴明,25,Others
+ライブ,25,YouTube Term
+くる,25,Others
+Live,25,YouTube Term
+国会,25,Speech
+拡散,25,YouTube Term
+差別,24,Foreign-Related
+躍進,24,Others
+暴露,24,Foreign-Related
+北口,24,Speech
+しまう,23,Others
+ひろ,23,Others
+ロシア,23,Foreign-Related
+NEWS,23,Media-Related
+自公,23,Anti-Government
+山本,23,Candidate
+15,23,Others
+見る,22,Others
+批判,22,Media-Related
+くださる,22,Others
+ブチギレ,22,Others
+...,22,Others
+12,21,Others
+総理,21,Anti-Government
+行く,21,Others
+国民,,Other parties
+民主党,,Other parties
+姫路,,Speech
