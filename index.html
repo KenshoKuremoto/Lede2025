@@ -10,219 +10,59 @@
     href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap"
     rel="stylesheet"
   />
-  <style>
-    .header.with-image-bg {
-  background-image: url('thumbnail.png');
-  background-size: cover;
-  background-position: center;
-  height: 70vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  position: relative;
-  text-align: center;
+ <style>
+body {
+  margin: 0;
+  font-size: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-rendering: optimizeLegibility;
+  background-color: #fff;
+  color: #111;
 }
-
-.header.with-image-bg::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.45); /* ダークなオーバーレイ */
-  z-index: 1;
+p {
+  line-height: 1.8;
+  padding-bottom: 1.2em;
 }
-
-.header-text-container {
-  z-index: 2;
-  padding: 1em;
-  max-width: 90%;
-}
-
-.header-title {
-  font-size: 2.8em;
+h1 {
   font-family: 'Lora', Georgia, serif;
-  margin: 0 0 0.3em 0;
+  font-size: 2.6em;
+  margin-bottom: 0.2em;
 }
-
-.header-subtitle {
-  font-size: 1.2em;
-  font-weight: 300;
-  color: #eee;
+h2 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.8em;
+  margin-top: 3em;
+  margin-bottom: 0.5em;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.2em;
 }
-
-    body {
-      margin: 0;
-      font-size: 20px;
-      font-family: Georgia, 'Times New Roman', Times, serif;
-      text-rendering: optimizeLegibility;
-      background-color: #fff;
-      color: #111;
-    }
-    .content {
-      max-width: 768px;
-      margin: auto;
-      padding: 2em 1em;
-    }
-    h1 {
-      font-family: 'Lora', Georgia, serif;
-      font-size: 2.6em;
-      margin-bottom: 0.2em;
-    }
-    h2 {
-      font-family: 'Lora', Georgia, serif;
-      font-size: 1.8em;
-      margin-top: 3em;
-      margin-bottom: 0.5em;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 0.2em;
-    }
-    h3 {
-      font-size: 1.3em;
-      font-weight: normal;
-      color: #444;
-      margin-top: 0;
-    }
-    p {
-      line-height: 1.8;
-      padding-bottom: 1.2em;
-    }
-    iframe {
-      width: 100%;
-      border: none;
-      display: block;
-      margin: 1.5em 0;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 2em 0;
-      font-size: 0.95em;
-      background-color: #fff;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-    th, td {
-      border: 1px solid #ccc;
-      padding: 0.6em;
-      text-align: left;
-    }
-    thead th {
-      background-color: #f0f0f0;
-      font-weight: bold;
-      border-bottom: 2px solid #999;
-    }
-    .color-box {
-      border: 2px solid #333;
-      padding: 1em;
-      background-color: #f9f9f9;
-      margin-top: 0;
-    }
-    .highlight-box {
-      background: #f3faff;
-      border-left: 6px solid #4a90e2;
-      padding: 1em;
-      margin: 2em 0;
-      font-size: 0.95em;
-    }
-    .caption {
-      font-size: 0.85em;
-      color: #666;
-      margin-top: -1em;
-      margin-bottom: 1.5em;
-      text-align: center;
-    }
-    .radio-container {
-      background: #f9f9f9;
-      border: 1px solid #ddd;
-      padding: 1em;
-      margin: 2em 0;
-      border-radius: 6px;
-    }
-    .radio-container label {
-      margin-right: 1em;
-      font-weight: bold;
-      padding: 0.3em 0.6em;
-      border-radius: 4px;
-      border: 1px solid transparent;
-      cursor: pointer;
-    }
-    .radio-container input[type="radio"]:checked + label {
-      background-color: #e6f2ff;
-      border-color: #4a90e2;
-    }
-    img, video {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 1em 0;
-      object-fit: contain;
-    }
-    @media (max-width: 768px) {
-      body {
-        font-size: 18px;
-      }
-      h1 {
-        font-size: 2em;
-      }
-      h2 {
-        font-size: 1.5em;
-      }
-    }
-    .image-toggle-buttons {
-  display: flex;
-  gap: 1em;
-  margin: 1.5em 0;
-}
-.toggle-button {
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  border: 2px solid #ccc;
-  background: #f9f9f9;
-  cursor: pointer;
-  border-radius: 6px;
-  transition: background 0.2s, border-color 0.2s;
-}
-.toggle-button:hover {
-  background: #eee;
-}
-.toggle-button.active {
-  background: #4a90e2;
-  color: white;
-  border-color: #4a90e2;
-}
-.image-toggle-buttons-2 {
-  display: flex;
-  gap: 1em;
-  margin: 1.5em 0;
-}
-.toggle-button-2 {
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  border: 2px solid #ccc;
-  background: #f9f9f9;
-  cursor: pointer;
-  border-radius: 6px;
-  transition: background 0.2s, border-color 0.2s;
-}
-.toggle-button-2:hover {
-  background: #eee;
-}
-.toggle-button-2.active {
-  background: #4a90e2;
-  color: white;
-  border-color: #4a90e2;
-}
-.color-box h2 {
+h3 {
+  font-size: 1.3em;
+  font-weight: normal;
+  color: #444;
   margin-top: 0;
 }
-.color-box p {
-  margin-bottom: 1.2em;
+
+/* === Layout === */
+.content {
+  max-width: 768px;
+  margin: auto;
+  padding: 2em 1em;
+}
+iframe, img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1em 0;
+  object-fit: contain;
+}
+@media (max-width: 768px) {
+  body { font-size: 18px; }
+  h1 { font-size: 2em; }
+  h2 { font-size: 1.5em; }
 }
 
-.color-box li {
-  margin-bottom: 1em;
-  line-height: 1.6;
-}
+/* === Header Section === */
 .header {
   position: relative;
   background-image: url('thumbnail.png');
@@ -232,6 +72,25 @@
   text-align: center;
   color: white;
   overflow: visible;
+  opacity: 0;
+  animation: fadeInImage 1.5s ease-out 1.0s forwards;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.35); /* 少し暗めで文字が読みやすく */
+  z-index: 1;
+}
+
+.header-text-container {
+  position: relative;
+  z-index: 2;
+  color: white;
+  padding: 1em;
+  max-width: 90%;
 }
 
 .header-title {
@@ -239,25 +98,130 @@
   line-height: 1.3;
   margin: 0.5em 0;
   word-break: break-word;
+  font-family: 'Lora', Georgia, serif;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInTitle 1.2s ease-out 2s forwards;
 }
 
-.subhead {
+.header-subtitle {
   font-size: clamp(1rem, 3vw, 1.4rem);
+  font-weight: 300;
   line-height: 1.6;
   padding: 0 1em;
+  color: #eee;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInSubhead 1.2s ease-out 3.2s forwards;
+}
+
+/* アニメーション定義 */
+@keyframes fadeInImage {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeInTitle {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInSubhead {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 
-  </style>
+/* === Tables === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2em 0;
+  font-size: 0.95em;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+th, td {
+  border: 1px solid #ccc;
+  padding: 0.6em;
+  text-align: left;
+}
+thead th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  border-bottom: 2px solid #999;
+}
+
+/* === Boxes & Highlights === */
+.color-box {
+  border: 2px solid #333;
+  padding: 1em;
+  background-color: #f9f9f9;
+  margin-top: 0;
+}
+.color-box h2 {
+  margin-top: 0;
+}
+.color-box p {
+  margin-bottom: 1.2em;
+}
+.color-box li {
+  margin-bottom: 1em;
+  line-height: 1.6;
+}
+.highlight-box {
+  background: #f3faff;
+  border-left: 6px solid #4a90e2;
+  padding: 1em;
+  margin: 2em 0;
+  font-size: 0.95em;
+}
+
+/* === Captions === */
+.caption {
+  font-size: 0.85em;
+  color: #666;
+  margin-top: -1em;
+  margin-bottom: 1.5em;
+  text-align: center;
+}
+
+/* === Toggle Buttons === */
+.image-toggle-buttons, .image-toggle-buttons-2 {
+  display: flex;
+  gap: 1em;
+  margin: 1.5em 0;
+}
+.toggle-button, .toggle-button-2 {
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  border: 2px solid #ccc;
+  background: #f9f9f9;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s, border-color 0.2s;
+}
+.toggle-button:hover, .toggle-button-2:hover {
+  background: #eee;
+}
+.toggle-button.active, .toggle-button-2.active {
+  background: #4a90e2;
+  color: white;
+  border-color: #4a90e2;
+}
+</style>
 </head>
+
 <body>
-<div class="header">
-  <div class="header-content">
-    <h1 class="header-title">
-      The Algorithm Election Comes to Japan:<br>
-      From Policy to Provocation
+<div class="header fade-in-image">
+  <div class="header-text-container">
+    <h1 class="header-title fade-in-title">
+      The Algorithm Election Comes to Japan
     </h1>
-    <p class="subhead">
+    <p class="header-subtitle fade-in-subhead">
       A data-driven look at how two breakout parties—DPP and Sanseito—rose together in the polls, but only one dominated YouTube by turning outrage into attention
     </p>
   </div>
@@ -267,7 +231,7 @@
    <p><strong>By Kensho Kuremoto (Lede 2025)</strong></p>
 
    <div style="text-align: center; margin: 2em 0;">
-  <a href="#visual-gap" style="
+  <a href="#Go Analysis" style="
     display: inline-block;
     padding: 0.7em 1.5em;
     font-size: 1em;
@@ -288,7 +252,7 @@
 
     <p>This comes after Prime Minister Shigeru Ishiba’s coalition lost control of the lower house last year—meaning, for the first time since the founding of the Liberal Democratic Party (LDP) in 1955, Japan’s dominant party no longer controls either chamber of the Diet. But this isn’t a clean transfer of power. Japan’s multiparty system is fractious. Coalition-building is rare. Every faction is a minority. Hence the chaos.</p>
         <h2>Two Newcomers, One Digital Surge</h2>
-    <p>Amid the political disarray, two upstart parties have made striking gains: <strong>the Democratic Party for the People (<span style="color: #0010a5;">DPP</span>) and <span style="color: #eb640a;">Sanseito</span></strong>. The DPP grew from 9 to 22 seats; Sanseito surged from 2 to 15. Given that only half of the upper house seats were up for election, the scale of these gains is notable. In recent party support polls, both the DPP and Sanseito stand out—<strong>especially remarkable for parties founded less than five years ago.</strong></p>
+    <p>Amid the political disarray, two upstart parties have made striking gains: <strong><span style="color: #0010a5;">the Democratic Party for the People (DPP)</span> and <span style="color: #eb640a;">Sanseito</span></strong>. The DPP grew from 9 to 22 seats; Sanseito surged from 2 to 15. Given that only half of the upper house seats were up for election, the scale of these gains is notable. In recent party support polls, both the DPP and Sanseito stand out—<strong>especially remarkable for parties founded less than five years ago.</strong></p>
 
     <iframe title="Party Support Over the Past Year (Public Opinion Polls)" aria-label="Interactive line chart" id="datawrapper-chart-V5Jaa" src="https://datawrapper.dwcdn.net/V5Jaa/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="414" data-external="1"></iframe>
 
@@ -310,7 +274,12 @@
  Sanseito, by contrast, was built from the internet up. Led by Sohei Kamiya (47), a right-wing politician and former member of the ruling LDP, the party was founded by rallying supporters online and quickly gained traction through social media. In this election, it ran under the slogan “Japanese First,” promoting hardline stances on immigration, opposition to vaccines and globalization, and support for traditional gender roles—positions that have drawn <strong>comparisons to MAGA Republicans in the U.S., Germany’s AfD, and the UK’s Reform Party.</strong>
 </p>
 
-    <h2 id="visual-gap">Same Number of Videos—Three Times the Views</h2>
+    <h2 id="Go Analysis">Same Number of Videos—Three Times the Views</h2>
+    <figure style="margin: 1.5em 0;">
+  <img src="Videos.png" alt="Videos" width="100%">
+  <figcaption style="font-size: 0.85em; color: #666; text-align: center; margin-top: 0.5em;">
+    Thumbnails of all retrieved videos, showing both parties had a nearly identical number.
+  </figcaption>
     <p>To better understand the divergence between these two rising forces, I analyzed <strong>over 2,000 YouTube videos</strong> posted during the official campaign period(see methodology). Videos under 60 seconds were categorized as Shorts. <strong>In terms of volume, the two parties looked nearly identical</strong>: 1,061 videos for the DPP and 1,289 for Sanseito, with about 30 percent of each being Shorts and a similar number of unique channels posting about them.</p>
     <iframe title="The number of Related Videos: DPP vs Sanseito" aria-label="Stacked Bars" id="datawrapper-chart-l5Tts" src="https://datawrapper.dwcdn.net/l5Tts/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="212" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}})}();
 </script>
